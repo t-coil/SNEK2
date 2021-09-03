@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/SNEK2/static/css/main.95209336.chunk.css",
-    "main.js": "/SNEK2/static/js/main.590dbe6f.chunk.js",
-    "main.js.map": "/SNEK2/static/js/main.590dbe6f.chunk.js.map",
+    "main.js": "/SNEK2/static/js/main.064982b1.chunk.js",
+    "main.js.map": "/SNEK2/static/js/main.064982b1.chunk.js.map",
     "runtime-main.js": "/SNEK2/static/js/runtime-main.b9af86a5.js",
     "runtime-main.js.map": "/SNEK2/static/js/runtime-main.b9af86a5.js.map",
     "static/js/2.c1350f36.chunk.js": "/SNEK2/static/js/2.c1350f36.chunk.js",
@@ -29,6 +29,6 @@
     "static/js/runtime-main.b9af86a5.js",
     "static/js/2.c1350f36.chunk.js",
     "static/css/main.95209336.chunk.css",
-    "static/js/main.590dbe6f.chunk.js"
+    "static/js/main.064982b1.chunk.js"
   ]
 }
