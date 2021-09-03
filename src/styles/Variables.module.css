@@ -1,0 +1,12 @@
+@import './Colors.module.css';
+@import './Fonts.module.css';
+
+/* TODO: Remove all instances of these and use MediaQueries.mod.css */
+$content-width-full: 1000px;
+$content-width-full-limit: 1024px;
+
+$content-width-restricted: 824px;
+$content-width-restricted-limit: 848px;
+$content-width-restricted-offset: calc(($content-width-full - $content-width-restricted) / 2);
+
+$content-width-mobile: 320px;

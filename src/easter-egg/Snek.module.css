@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+@value variables: './variables.module.css';
+@value full-height-px, canvas-width-px, canvas-height-px, canvas-width, full-height from variables;
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container::before {
+  display: block;
+  position: absolute;
+  content: '';
+  padding-top: calc((full-height / canvas-width) * 10%);
+}
+
+.gameOverText {
+  position: absolute;
+  text-align: center;
+  width: 100vw;
+  height: full-height-px;
+  max-height: 100vh;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 20px;
+  color: white;
+  line-height: 60px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.gameOverCanvas {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  height: full-height-px;
+  max-height: 100vh;
+  z-index: 500;
+  image-rendering: crisp-edges;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: pixelated;
+}
+
+.gameWrap {
+  height: 80vh;
+  width: 100vw;
+  max-height: canvas-height-px;
+  position: relative;
+}
+
+.gameCanvas {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  image-rendering: crisp-edges;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: pixelated;
+  height: 100%;
+  z-index: 1;
+}
+
+.winner {
+  font-size: 30px;
+  margin: 30px auto;
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  0% {
+    color: white;
+  }
+  50% {
+    color: hsl(227, 58.4%, 65.1%);
+  }
+}
+
+.snek2Instructions {
+  margin-top: 40px;
+}
+
+.snek2NoShow {
+  height: 0 !important;
+  width: 0 !important;
+  display: none;
+}
+
+.snek2DoShow {
+  height: full-height-px;
+  width: canvas-width-px;
+}

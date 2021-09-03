@@ -1,0 +1,7 @@
+/* TODO: Use @value for these. */
+/* Text */
+$primary-font: 'Whitney', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+$primary-semibold: 'WhitneyMedium', $primary-font;
+$monospace-font: 'Menlo', 'Consolas', 'Monaco', monospace;
+$glitch-font: 'ArchivoBlack', $primary-font;
+$cursive-font: 'Reenie Beanie', 'Comic Sans MS', cursive, sans-serif;

@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
+.unityContainer {
+  position: relative;
+  width: 1152px;
+  height: 900px;
+  background-color: #60C64F;
+}
+
+.unityCanvas {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 1152px !important;
+  height: 900px !important;
+}
+
+.loadingLine {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 40px;
+  position: absolute;
+  top: 400px;
+  left: 500px;
+}

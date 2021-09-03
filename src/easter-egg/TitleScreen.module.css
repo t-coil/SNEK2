@@ -1,0 +1,49 @@
+@value variables: './variables.module.css';
+@value full-height-px, canvas-width-px, canvas-width, full-height from variables;
+
+.titleCard {
+  height: full-height-px;
+  width: canvas-width-px;
+  max-height: 100%;
+  image-rendering: crisp-edges;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: pixelated;
+}
+
+.titleCardAnimated {
+  height: full-height-px;
+  width: canvas-width-px;
+  max-height: 100%;
+  image-rendering: crisp-edges;
+  image-rendering: crisp-edges;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: pixelated;
+  animation: fade-in 0.5s ease-in;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  image-rendering: crisp-edges;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: pixelated;
+}
+
+.container::before {
+  display: block;
+  position: absolute;
+  content: '';
+  padding-top: calc((full-height / canvas-width) * 10%);
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

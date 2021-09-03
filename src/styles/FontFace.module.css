@@ -1,0 +1,68 @@
+/*
+  TODO: Apply font-family to root element and inherit everywhere else; the only specific font-family overrides should be
+  used for explicitly rendering a different font.
+  https://github.com/discord/discord/pull/8392#pullrequestreview-122767082
+*/
+@font-face {
+  font-family: Whitney;
+  font-weight: 300;
+  src: url('./fonts/whitney-light.woff') format('woff');
+}
+
+@font-face {
+  font-family: Whitney;
+  font-weight: 400;
+  src: url('./fonts/whitney-book.woff') format('woff');
+}
+
+@font-face {
+  font-family: Whitney;
+  font-weight: 500;
+  src: url('./fonts/whitney-medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: Whitney;
+  font-weight: 600;
+  src: url('./fonts/whitney-semibold.woff') format('woff');
+}
+
+@font-face {
+  font-family: Whitney;
+  font-weight: 700;
+  src: url('./fonts/whitney-bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: Whitney;
+  font-style: italic;
+  font-weight: 400;
+  src: url('./fonts/whitney-italic.woff') format('woff');
+}
+
+@font-face {
+  font-family: ArchivoBlack;
+  src: url('./fonts/archivo-black.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Reenie Beanie';
+  src: url('./fonts/reenie-beanie.woff') format('woff');
+}
+
+@font-face {
+  font-family: SourceCodePro;
+  font-weight: 400;
+  src: url('./fonts/source-code-pro-light.woff') format('woff');
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  font-family: Whitney;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+ol, ul {
+  list-style: none;
+}

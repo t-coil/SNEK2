@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+@value variables: './variables.module.css';
+@value scoreboard-height-px from variables;
+
+.boardWrapper {
+  position: relative;
+  height: 20vh;
+  width: 100vw;
+  max-height: scoreboard-height-px;
+  display: flex;
+  justify-content: center;
+}
+
+.canvas {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  height: 100%;
+  image-rendering: crisp-edges;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: pixelated;
+  font-smooth: never;
+  z-index: 1;
+}
+
+.score {
+  position: relative;
+  padding: 20px;
+  font-family: 'Press Start 2P', cursive, 'Whitney', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 20px;
+  color: $white;
+  text-align: left;
+  z-index: 10;
+}

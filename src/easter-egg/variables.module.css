@@ -1,0 +1,11 @@
+@value scale: 3;
+
+@value canvas-width: calc(384 * scale);
+@value canvas-height: calc(240 * scale);
+@value scoreboard-height: calc(60 * scale);
+@value full-height: 900;
+
+@value canvas-width-px: calc(canvas-width * 1px);
+@value canvas-height-px: calc(canvas-height * 1px);
+@value scoreboard-height-px: calc(scoreboard-height * 1px);
+@value full-height-px: calc(full-height * 1px);

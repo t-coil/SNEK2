@@ -1,0 +1,15 @@
+/* Allows an element to scale smoothly while maintaining its aspect ratio
+* This mixin is for a wrapper div around the 'scaling' element
+* Scaling element must be absolutely positioned. See TitleScreen.mod.css
+* for an example of how to use when you need to specify width
+*/
+@define-mixin scaling-div $width, $height {
+  position: relative;
+
+  &::before {
+    display: block;
+    position: absolute;
+    content: '';
+    padding-top: calc(($height / $width) * 10%);
+  }
+}

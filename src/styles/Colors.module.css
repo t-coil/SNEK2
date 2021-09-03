@@ -1,0 +1,66 @@
+/*
+  TODO: Remove all instances of these colors and use the auto-generated variables.
+  See dicord_common/js/shared/config/colors
+*/
+$brand-purple: #7289da;
+$hint-purple: #c9d2f0;
+$dark-purple: #697ec4;
+
+$status-red: #f04747;
+$status-green: #43b581;
+$status-yellow: #faa61a;
+$status-grey: #747f8d;
+
+$white: #fff;
+$white-1: #f9f9f9;
+$white-2: #f3f3f3;
+$white-3: #f0f0f0;
+$white-4: #eceeef;
+$white-5: #ebebeb;
+$white-6: #e9e7e7;
+$white-7: #dbdde1;
+$white-8: #cdcdcd;
+$placeholder: #dadddf;
+
+$black: #000;
+$orange: #f26522;
+$guilds-grey: #282b30;
+$channels-grey: #36393e;
+$account-grey: #2e3136;
+$unread-grey: #8a8e94;
+$grey-1: #99aab5;
+$grey-2: #87909c;
+$grey-3: #737f8d;
+$grey-4: #949494;
+$grey-5: #535559;
+$grey-6: #4f545c;
+$grey-7: #1c242b;
+
+$dark-1: #35383c;
+
+$link-blue: #00aff7;
+
+$color-status-success: #43b581;
+$color-status-error: #f04747;
+$color-status-warning: #faa61a;
+$color-status-default: #747f8d;
+
+$color-brand: #7289da;
+$color-brand-dark: #5872c8;
+$color-white: #ffffff;
+$color-greyple: #99aab5;
+$color-dark: #4f545c;
+$color-black: #21262b;
+$color-body-light: rgba($color-white, 0.6);
+$color-body-dark: #737f8d;
+$color-link: $color-white;
+$color-link-hover: darken($color-white, 30%);
+$color-link-2: $color-brand;
+$color-link-2-hover: darken($color-link-2, 10%);
+$color-link-3: #00aff7;
+$color-link-3-hover: darken($color-link-3, 10%);
+$color-blurb-hero: rgba($color-white, 0.6);
+$color-placeholder: #dadddf;
+$color-footer: $color-black;
+
+$form-error: #fb6665;
