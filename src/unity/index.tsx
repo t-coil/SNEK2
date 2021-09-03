@@ -4,10 +4,10 @@ import Unity, { UnityContext } from 'react-unity-webgl';
 import styles from './index.module.css';
 
 const unityContext = new UnityContext({
-  loaderUrl: 'unitybuild/build.loader.js',
-  dataUrl: 'unitybuild/build.data.unityweb',
-  frameworkUrl: 'unitybuild/build.framework.js.unityweb',
-  codeUrl: 'unitybuild/build.wasm.unityweb',
+  loaderUrl: 'unitybuild/SNEK2.loader.js',
+  dataUrl: 'unitybuild/SNEK2.data.unityweb',
+  frameworkUrl: 'unitybuild/SNEK2.framework.js.unityweb',
+  codeUrl: 'unitybuild/SNEK2.wasm.unityweb',
 });
 
 export default function UnityGame() {
