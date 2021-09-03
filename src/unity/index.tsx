@@ -10,6 +10,23 @@ const unityContext = new UnityContext({
   codeUrl: 'unitybuild/SNEK2.wasm.unityweb',
 });
 
+function LoadingScreen() {
+  return (
+    <div className={styles.loadingScreenContainer}>
+      <div>
+        <ul>
+          <li>- Press space to move through dialogue</li>
+          <li>- Use F1 to return home if you get stuck</li>
+          <li>- Complete all the levels to unlock the final secret level!</li>
+        </ul>
+      </div>
+      <div className={styles.loadingLine}>
+        Finding you the perfect therapist...
+      </div>
+    </div>
+  );
+}
+
 export default function UnityGame() {
   const [isUnityLoaded, setIsUnityLoaded] = React.useState(false);
 
@@ -23,11 +40,7 @@ export default function UnityGame() {
 
   return (
     <div className={styles.unityContainer}>
-      {!isUnityLoaded && (
-        <div className={styles.loadingLine}>
-          Finding you the perfect therapist...
-        </div>
-      )}
+      {!isUnityLoaded && <LoadingScreen />}
       <Unity className={styles.unityCanvas} unityContext={unityContext} />
     </div>
   );
