@@ -6,8 +6,12 @@ import AnimationWrapper from '../animation/AnimationWrapper';
 import { Buttons } from '../easter-egg/SnekConstants';
 import styles from './NellyAnimation.module.css';
 
-const buttonDown = require('./snek-nelly/images/404_btn_down.svg');
-const buttonUp = require('./snek-nelly/images/404_btn_up.svg');
+const buttonDownSrc = require('./snek-nelly/images/404_btn_down.svg').default;
+const buttonUpSrc = require('./snek-nelly/images/404_btn_up.svg').default;
+
+const ButtonDown = <img alt="" src={buttonDownSrc} className={styles.button} />;
+
+const ButtonUp = <img alt="" src={buttonUpSrc} className={styles.button} />;
 
 class NellyAnimation extends React.PureComponent {
   constructor(props) {
@@ -92,14 +96,12 @@ class NellyAnimation extends React.PureComponent {
   }
 
   render() {
-    const imgShown =
-      this.state.buttonShown === Buttons.DOWN
-        ? buttonDown.default
-        : buttonUp.default;
+    const button =
+      this.state.buttonShown === Buttons.DOWN ? ButtonDown : ButtonUp;
 
     return (
       <div className={styles.animationWrapper} onMouseDown={this.onMouseDown}>
-        <img alt="" src={imgShown} className={styles.button} />
+        {button}
         {this.renderAnimation()}
       </div>
     );

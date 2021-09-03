@@ -16,7 +16,7 @@ function LoadingScreen() {
       <div>
         <ul>
           <li>- Press space to move through dialogue</li>
-          <li>- Use F1 to return home if you get stuck</li>
+          <li>- Use F1 to return home if you jump off the map</li>
           <li>- Complete all the levels to unlock the final secret level!</li>
         </ul>
       </div>

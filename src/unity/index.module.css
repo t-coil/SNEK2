@@ -25,4 +25,11 @@
 
 .loadingScreenContainer {
   display: flex;
+  font-size: 30px;
+  font-family: SourceCodePro;
+  font-weight: 300;
+}
+
+li {
+  margin-bottom: 8px;
 }

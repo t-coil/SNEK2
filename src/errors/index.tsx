@@ -84,7 +84,6 @@ class Error extends React.PureComponent<{}, State> {
             </li>
           </ul>
         </div>
-        {/* <UnityGame /> */}
         <NellyAnimation toggleSnek={this.toggleSnek} />
         {snek}
       </div>
