@@ -1,10 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
-
 .unityContainer {
   position: relative;
   width: 1152px;
   height: 900px;
-  background-color: #60C64F;
 }
 
 .unityCanvas {
@@ -15,21 +12,7 @@
   height: 900px !important;
 }
 
-.loadingLine {
-  font-family: 'Press Start 2P', cursive;
-  font-size: 40px;
-  position: absolute;
-  top: 400px;
-  left: 500px;
-}
-
-.loadingScreenContainer {
-  display: flex;
-  font-size: 30px;
-  font-family: SourceCodePro;
-  font-weight: 300;
-}
-
-li {
-  margin-bottom: 8px;
+.loadingScreen {
+  height: 100%;
+  width: 100%;
 }

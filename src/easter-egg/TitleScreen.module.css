@@ -5,19 +5,12 @@
   height: full-height-px;
   width: canvas-width-px;
   max-height: 100%;
-  image-rendering: crisp-edges;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: pixelated;
 }
 
 .titleCardAnimated {
   height: full-height-px;
   width: canvas-width-px;
   max-height: 100%;
-  image-rendering: crisp-edges;
-  image-rendering: crisp-edges;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: pixelated;
   animation: fade-in 0.5s ease-in;
 }
 
@@ -27,9 +20,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  image-rendering: crisp-edges;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: pixelated;
 }
 
 .container::before {
