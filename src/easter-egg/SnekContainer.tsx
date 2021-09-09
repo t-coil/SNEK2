@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import Snek from './Snek';
 import TitleScreen from './TitleScreen';
-import {loadImagePromise as loadImage} from './ImageUtils';
+import {loadImage} from './ImageUtils';
 
 import styles from './SnekContainer.module.css';
 import UnityGame from '../unity';

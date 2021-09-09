@@ -1,10 +1,10 @@
 import * as React from 'react';
 import lodash from 'lodash';
 
-import { loadImagePromise as loadImage } from './ImageUtils';
+import {loadImage} from './ImageUtils';
 import Scoreboard from './Scoreboard';
-import { checkDoorCollision, isSnekAtDoorEntrance } from './Snek2Utils';
-import { Position, SnekPiece, PlayerSnek, Game } from './SnekClasses';
+import {checkDoorCollision, isSnekAtDoorEntrance} from './Snek2Utils';
+import {Position, SnekPiece, PlayerSnek, Game} from './SnekClasses';
 
 import {
   Dimensions,
@@ -88,13 +88,8 @@ export default class Snek extends React.PureComponent {
 
   drawGameOverState() {
     this.gameOverCanvas.fillStyle = Colors.SHEER_OVERLAY;
-    this.gameOverCanvas.fillRect(
-      0,
-      0,
-      Dimensions.CANVAS_WIDTH,
-      Dimensions.FULL_HEIGHT
-    );
-    this.setState({ gameOver: true });
+    this.gameOverCanvas.fillRect(0, 0, Dimensions.CANVAS_WIDTH, Dimensions.FULL_HEIGHT);
+    this.setState({gameOver: true});
     this.ready = this.props.muted;
   }
 
@@ -145,8 +140,8 @@ export default class Snek extends React.PureComponent {
   // Set Up
 
   handleKeyDown = (event: KeyboardEvent) => {
-    const { snek } = this.game;
-    const action = Controls[event.keyCode];
+    const {snek} = this.game;
+    const action = Controls[event.key];
 
     // Don't bother if we're not ready
     if (!this.ready) {
@@ -160,17 +155,13 @@ export default class Snek extends React.PureComponent {
 
     if (!snek.alive) {
       // SNEK 2!
-      if (
-        this.state.gameOver &&
-        action === Actions.ENTER &&
-        (event.metaKey || event.ctrlKey)
-      ) {
+      if (this.state.gameOver && action === Actions.ENTER && (event.metaKey || event.ctrlKey)) {
         this.resetBoard(true);
-        this.setState({ gameOver: false, showDoor: true });
+        this.setState({gameOver: false, showDoor: true});
         // RESET GAME
       } else if (this.state.gameOver && action === Actions.ENTER) {
         this.resetBoard();
-        this.setState({ gameOver: false });
+        this.setState({gameOver: false});
         // NEW GAME START
       } else if (!this.state.gameOver && this.state.showDoor) {
         this.moveSnek(action);
@@ -188,27 +179,16 @@ export default class Snek extends React.PureComponent {
 
   createBoard() {
     this.background.fillStyle = Colors.GREEN_LAWN;
-    this.background.fillRect(
-      0,
-      0,
-      Dimensions.CANVAS_WIDTH,
-      Dimensions.CANVAS_HEIGHT
-    );
+    this.background.fillRect(0, 0, Dimensions.CANVAS_WIDTH, Dimensions.CANVAS_HEIGHT);
     this.background.save();
   }
 
   resetBoard(showDoor: boolean = false) {
     this.resetSong(this.snekDeadSong);
-    this.setState({ points: 0 });
+    this.setState({points: 0});
     this.child.resetBoard();
     this.clearRect(0, 0, Dimensions.CANVAS_WIDTH, Dimensions.CANVAS_HEIGHT);
-    this.clearRect(
-      0,
-      0,
-      Dimensions.CANVAS_WIDTH,
-      Dimensions.FULL_HEIGHT,
-      this.gameOverCanvas
-    );
+    this.clearRect(0, 0, Dimensions.CANVAS_WIDTH, Dimensions.FULL_HEIGHT, this.gameOverCanvas);
     this.drawSnek();
     if (showDoor) {
       this.drawDoor();
@@ -236,12 +216,10 @@ export default class Snek extends React.PureComponent {
   }
 
   loadSnekAndBackground() {
-    Promise.all([loadImage(Images.SNEK), loadImage(Images.FENCE)]).then(
-      (images) => {
-        this.game.snek.spriteSheetOnload(this, images[0]);
-        this.drawImage(this.background, images[1], 0, 0);
-      }
-    );
+    Promise.all([loadImage(Images.SNEK), loadImage(Images.FENCE)]).then((images) => {
+      this.game.snek.spriteSheetOnload(this, images[0]);
+      this.drawImage(this.background, images[1], 0, 0);
+    });
 
     this.loadItems();
   }
@@ -257,9 +235,7 @@ export default class Snek extends React.PureComponent {
 
     lodash.forEach(this.items, (data, item) => {
       loadImage(data.imgSrc).then((img) => (this.items[item].img = img));
-      loadImage(data.textImgSrc).then(
-        (img) => (this.items[item].textImg = img)
-      );
+      loadImage(data.textImgSrc).then((img) => (this.items[item].textImg = img));
 
       // Create array of item names to pick from, weighted appropriately
       const weighted = Array(data.weight).fill(item);
@@ -279,7 +255,7 @@ export default class Snek extends React.PureComponent {
   // Snek
 
   moveSnek(action) {
-    const { snek } = this.game;
+    const {snek} = this.game;
     const oldHead = snek.position[snek[SnekPieces.HEAD]];
 
     // Ensure user isn't trying to move backwards
@@ -293,10 +269,7 @@ export default class Snek extends React.PureComponent {
     const direction = action || oldHead.direction;
 
     const newHead = new SnekPiece(direction, SnekPieces.HEAD);
-    newHead.setCoords(
-      oldHead.x + Moves[direction].x,
-      oldHead.y + Moves[direction].y
-    );
+    newHead.setCoords(oldHead.x + Moves[direction].x, oldHead.y + Moves[direction].y);
     const newHeadCoords = newHead.getKeyString();
 
     // If the door exists and we've run into it, stop
@@ -346,7 +319,7 @@ export default class Snek extends React.PureComponent {
     }
 
     if (this.state.showDoor && isSnekAtDoorEntrance(newHead)) {
-      this.setState({ enteringDoor: true });
+      this.setState({enteringDoor: true});
     }
 
     this.animateHead(newHead, oldHead, this.state.enteringDoor);
@@ -365,10 +338,7 @@ export default class Snek extends React.PureComponent {
       );
     }
 
-    oldHead.type =
-      newHead.direction === oldHead.direction
-        ? SnekPieces.BODY
-        : SnekPieces.TURN;
+    oldHead.type = newHead.direction === oldHead.direction ? SnekPieces.BODY : SnekPieces.TURN;
     const direction = this.getBodyDirection(oldHead, newHead, oldHead.type);
     this.clearRect(oldHead.x, oldHead.y);
     this.drawImage(
@@ -383,10 +353,7 @@ export default class Snek extends React.PureComponent {
   }
 
   getBodyDirection(body, head, piece) {
-    const combo =
-      piece === SnekPieces.TURN
-        ? `${body.direction}_${head.direction}`
-        : body.direction;
+    const combo = piece === SnekPieces.TURN ? `${body.direction}_${head.direction}` : body.direction;
     return lodash.get(OppositeTurns, combo, combo);
   }
 
@@ -405,11 +372,8 @@ export default class Snek extends React.PureComponent {
   }
 
   checkAlive(newHeadCoords, newHead) {
-    const { snek } = this.game;
-    if (
-      snek.position[newHeadCoords] &&
-      newHeadCoords !== snek[SnekPieces.TAIL]
-    ) {
+    const {snek} = this.game;
+    if (snek.position[newHeadCoords] && newHeadCoords !== snek[SnekPieces.TAIL]) {
       snek.alive = false;
       return Death.BY_STEP_ON_SNEK;
     } else if (
@@ -432,10 +396,7 @@ export default class Snek extends React.PureComponent {
     }
 
     if (this.snekSong.playbackRate < 1.5 && !this.isSafari) {
-      this.snekSong.playbackRate = lodash.round(
-        this.snekSong.playbackRate * 1.01,
-        2
-      );
+      this.snekSong.playbackRate = lodash.round(this.snekSong.playbackRate * 1.01, 2);
     }
   }
 
@@ -451,22 +412,11 @@ export default class Snek extends React.PureComponent {
 
       // If the randomly generated # is 0, drop an itemGENERATE_ITEM_MODIFIER
       if (randomNumber === 0) {
-        const item =
-          this.items[
-            this.itemPickList[
-              Math.floor(Math.random() * this.itemPickList.length)
-            ]
-          ];
+        const item = this.items[this.itemPickList[Math.floor(Math.random() * this.itemPickList.length)]];
         if (this.game.snek.alive) {
           const randomCoords = this.getRandomCoordinates();
           this.game.items[randomCoords.coords] = item;
-          this.drawImage(
-            this.board,
-            item.img,
-            randomCoords.x,
-            randomCoords.y,
-            true
-          );
+          this.drawImage(this.board, item.img, randomCoords.x, randomCoords.y, true);
         }
       }
     }
@@ -476,7 +426,7 @@ export default class Snek extends React.PureComponent {
     const xCoord = lodash.random(1, Dimensions.COLUMNS_NO_FENCE);
     const yCoord = lodash.random(1, Dimensions.ROWS_NO_FENCE);
     const coords = new Position(xCoord, yCoord).getKeyString();
-    const allPiecesOnBoard = { ...this.game.snek.position, ...this.game.items };
+    const allPiecesOnBoard = {...this.game.snek.position, ...this.game.items};
 
     // If there's something currently at the random coords, generate new ones
     if (lodash.get(allPiecesOnBoard, coords, false)) {
@@ -485,7 +435,7 @@ export default class Snek extends React.PureComponent {
       }
       return this.getRandomCoordinates(tries++);
     } else {
-      return { coords, x: xCoord, y: yCoord };
+      return {coords, x: xCoord, y: yCoord};
     }
   }
 
@@ -494,8 +444,7 @@ export default class Snek extends React.PureComponent {
 
     if (foundItem) {
       if (!this.isSafari) {
-        const sound =
-          foundItem.name === 'fedora' ? this.fedoraSound : this.itemSound;
+        const sound = foundItem.name === 'fedora' ? this.fedoraSound : this.itemSound;
         sound.currentTime = 0;
         sound.volume = this.volume;
         sound.play();
@@ -505,7 +454,7 @@ export default class Snek extends React.PureComponent {
       this.setSpeed(foundItem);
 
       delete this.game.items[newHeadCoords];
-      this.setState({ points: this.state.points + foundItem.points });
+      this.setState({points: this.state.points + foundItem.points});
 
       return true;
     }
@@ -520,9 +469,7 @@ export default class Snek extends React.PureComponent {
           <div>Points: {this.state.points}</div>
           <div>Press ENTER To Reset SNEK</div>
           <div>Press ESC To Exit SNEK (๑◕︵◕๑)</div>
-          <div className={styles.snek2Instructions}>
-            Press CMD/CTRL + ENTER To Talk About Your Feelings
-          </div>
+          <div className={styles.snek2Instructions}>Press CMD/CTRL + ENTER To Talk About Your Feelings</div>
         </div>
       </div>
     ) : null;
@@ -536,11 +483,7 @@ export default class Snek extends React.PureComponent {
           ref={this.setGameOverRef}
           className={styles.gameOverCanvas}
         />
-        <Scoreboard
-          onRef={(ref) => (this.child = ref)}
-          points={this.state.points}
-          drawImage={this.drawImage}
-        />
+        <Scoreboard onRef={(ref) => (this.child = ref)} points={this.state.points} drawImage={this.drawImage} />
         <div className={styles.gameWrap}>
           <canvas
             width={Dimensions.CANVAS_WIDTH}
@@ -558,10 +501,6 @@ export default class Snek extends React.PureComponent {
       </>
     );
 
-    return (
-      <div className={styles.container}>
-        {!this.state.showSNEK2 ? normalContent : this.renderSNEK2()}
-      </div>
-    );
+    return <div className={styles.container}>{!this.state.showSNEK2 ? normalContent : this.renderSNEK2()}</div>;
   }
 }

@@ -38,10 +38,7 @@ const HALF_SPEECH_BUBBLE_HEIGHT = 26 / 2;
 
 const Positions = {
   SPEECH_BUBBLE_X: 9,
-  SPEECH_BUBBLE_Y:
-    Dimensions.SCOREBOARD_HEIGHT +
-    5 -
-    (Dimensions.SCOREBOARD_HEIGHT_HALVED + HALF_SPEECH_BUBBLE_HEIGHT),
+  SPEECH_BUBBLE_Y: Dimensions.SCOREBOARD_HEIGHT + 5 - (Dimensions.SCOREBOARD_HEIGHT_HALVED + HALF_SPEECH_BUBBLE_HEIGHT),
   QUOTE_X: Dimensions.CANVAS_WIDTH - 10,
   QUOTE_Y: Dimensions.SCOREBOARD_HEIGHT + 5,
 };
@@ -54,10 +51,10 @@ const Directions = keyMirror({
 });
 
 const Moves = {
-  [Directions.UP]: { x: 0, y: -1 },
-  [Directions.DOWN]: { x: 0, y: 1 },
-  [Directions.LEFT]: { x: -1, y: 0 },
-  [Directions.RIGHT]: { x: 1, y: 0 },
+  [Directions.UP]: {x: 0, y: -1},
+  [Directions.DOWN]: {x: 0, y: 1},
+  [Directions.LEFT]: {x: -1, y: 0},
+  [Directions.RIGHT]: {x: 1, y: 0},
 };
 
 const SnekPieces = keyMirror({
@@ -76,17 +73,17 @@ const Actions = keyMirror({
 });
 
 const KeyCodes = {
-  ENTER: 13,
-  ESC: 27,
-  LEFT_ARROW: 37,
-  UP_ARROW: 38,
-  RIGHT_ARROW: 39,
-  DOWN_ARROW: 40,
-  W: 87,
-  A: 65,
-  S: 83,
-  D: 68,
-  B: 66,
+  ENTER: 'Enter',
+  ESC: 'Escape',
+  LEFT_ARROW: 'ArrowLeft',
+  UP_ARROW: 'ArrowUp',
+  RIGHT_ARROW: 'ArrowRight',
+  DOWN_ARROW: 'ArrowDown',
+  W: 'w',
+  A: 'a',
+  S: 's',
+  D: 'd',
+  B: 'b',
 };
 
 const Controls = {
@@ -166,7 +163,7 @@ const Speed = {
 };
 
 const StartPosition = {
-  '11_6': { direction: Directions.UP, type: SnekPieces.HEAD },
+  '11_6': {direction: Directions.UP, type: SnekPieces.HEAD},
   '11_7': {
     direction: Directions.UP,
     type: SnekPieces.BODY,

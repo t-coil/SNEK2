@@ -1,16 +1,9 @@
 import * as React from 'react';
 import lodash from 'lodash';
 
-import { loadImagePromise as loadImage } from './ImageUtils';
+import {loadImage} from './ImageUtils';
 
-import {
-  Dimensions,
-  TitleImages,
-  KeyCodes,
-  SCALE,
-  Colors,
-  NORMAL_VOLUME,
-} from './SnekConstants';
+import {Dimensions, TitleImages, KeyCodes, SCALE, Colors, NORMAL_VOLUME} from './SnekConstants';
 import styles from './TitleScreen.module.css';
 
 const VolumeButtonPadding = 10;
@@ -77,12 +70,8 @@ export default class TitleScreen extends React.PureComponent {
 
   drawImage(image) {
     if (image.modifier) {
-      const width = Math.floor(
-        Dimensions.CANVAS_WIDTH_HALVED - image.img.width / 2
-      );
-      const height = Math.floor(
-        Dimensions.FULL_HEIGHT / 2 - image.img.height / 2 + image.modifier
-      );
+      const width = Math.floor(Dimensions.CANVAS_WIDTH_HALVED - image.img.width / 2);
+      const height = Math.floor(Dimensions.FULL_HEIGHT / 2 - image.img.height / 2 + image.modifier);
       this.titleCard.drawImage(image.img, width, height);
     } else {
       this.titleCard.drawImage(image.img, image.x, image.y);
@@ -104,7 +93,7 @@ export default class TitleScreen extends React.PureComponent {
   }
 
   handleKeyDown(event) {
-    if (event.keyCode === KeyCodes.ENTER) {
+    if (event.key === KeyCodes.ENTER) {
       const nextPage = this.state.howTo ? this.props.onClick : this.showHowTo;
       nextPage();
     }
@@ -112,7 +101,7 @@ export default class TitleScreen extends React.PureComponent {
 
   handleCanvasClick(event) {
     if (!this.isClickOnVolume(event)) {
-      this.setState({ howTo: true });
+      this.setState({howTo: true});
     } else {
       this.props.toggleSound();
       const volumeImage = this.props.muted ? 'ON' : 'OFF';
@@ -131,7 +120,7 @@ export default class TitleScreen extends React.PureComponent {
   }
 
   showHowTo() {
-    this.setState({ howTo: true });
+    this.setState({howTo: true});
   }
 
   isClickOnVolume(event) {
