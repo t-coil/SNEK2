@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/SNEK2/static/css/main.7fd0c998.chunk.css",
-    "main.js": "/SNEK2/static/js/main.c9b1930f.chunk.js",
-    "main.js.map": "/SNEK2/static/js/main.c9b1930f.chunk.js.map",
-    "runtime-main.js": "/SNEK2/static/js/runtime-main.27fce7a4.js",
-    "runtime-main.js.map": "/SNEK2/static/js/runtime-main.27fce7a4.js.map",
-    "static/js/2.e3f5d475.chunk.js": "/SNEK2/static/js/2.e3f5d475.chunk.js",
-    "static/js/2.e3f5d475.chunk.js.map": "/SNEK2/static/js/2.e3f5d475.chunk.js.map",
-    "static/js/3.7690f6f8.chunk.js": "/SNEK2/static/js/3.7690f6f8.chunk.js",
-    "static/js/3.7690f6f8.chunk.js.map": "/SNEK2/static/js/3.7690f6f8.chunk.js.map",
-    "static/js/4.e6e462e4.chunk.js": "/SNEK2/static/js/4.e6e462e4.chunk.js",
-    "static/js/4.e6e462e4.chunk.js.map": "/SNEK2/static/js/4.e6e462e4.chunk.js.map",
+    "main.js": "/SNEK2/static/js/main.ba69101d.chunk.js",
+    "main.js.map": "/SNEK2/static/js/main.ba69101d.chunk.js.map",
+    "runtime-main.js": "/SNEK2/static/js/runtime-main.3714778a.js",
+    "runtime-main.js.map": "/SNEK2/static/js/runtime-main.3714778a.js.map",
+    "static/js/2.5c10b5c1.chunk.js": "/SNEK2/static/js/2.5c10b5c1.chunk.js",
+    "static/js/2.5c10b5c1.chunk.js.map": "/SNEK2/static/js/2.5c10b5c1.chunk.js.map",
+    "static/js/3.5f046ab6.chunk.js": "/SNEK2/static/js/3.5f046ab6.chunk.js",
+    "static/js/3.5f046ab6.chunk.js.map": "/SNEK2/static/js/3.5f046ab6.chunk.js.map",
+    "static/js/4.4b824e8d.chunk.js": "/SNEK2/static/js/4.4b824e8d.chunk.js",
+    "static/js/4.4b824e8d.chunk.js.map": "/SNEK2/static/js/4.4b824e8d.chunk.js.map",
     "index.html": "/SNEK2/index.html",
     "static/css/main.7fd0c998.chunk.css.map": "/SNEK2/static/css/main.7fd0c998.chunk.css.map",
-    "static/js/2.e3f5d475.chunk.js.LICENSE.txt": "/SNEK2/static/js/2.e3f5d475.chunk.js.LICENSE.txt",
+    "static/js/2.5c10b5c1.chunk.js.LICENSE.txt": "/SNEK2/static/js/2.5c10b5c1.chunk.js.LICENSE.txt",
     "static/media/404_btn_down.svg": "/SNEK2/static/media/404_btn_down.20ddec8a.svg",
     "static/media/404_btn_up.svg": "/SNEK2/static/media/404_btn_up.e004e4e9.svg",
     "static/media/FontFace.module.css": "/SNEK2/static/media/whitney-semibold.caae8d9a.woff",
@@ -26,9 +26,9 @@
     "static/media/snek_play.mp3": "/SNEK2/static/media/snek_play.df0bf3b8.mp3"
   },
   "entrypoints": [
-    "static/js/runtime-main.27fce7a4.js",
-    "static/js/2.e3f5d475.chunk.js",
+    "static/js/runtime-main.3714778a.js",
+    "static/js/2.5c10b5c1.chunk.js",
     "static/css/main.7fd0c998.chunk.css",
-    "static/js/main.c9b1930f.chunk.js"
+    "static/js/main.ba69101d.chunk.js"
   ]
 }
